@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from func_ising import conf_rnd, simulation_binder, Binder
+from utils.fising2D import conf_rnd, simulation_binder, Binder
 from numba import jit
 
 Tinitial=3.0 

@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from func_ising import wolff
+from utils.fising2D import wolff
 from numba import jit
 import os
 my_path = os.path.dirname(__file__)

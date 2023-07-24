@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.tsa.stattools as sm
-from func_ising import conf_rnd, simulation, wolff
+from utils.fising2D import conf_rnd, simulation, wolff
 from numba import jit
 from scipy.optimize import curve_fit
 

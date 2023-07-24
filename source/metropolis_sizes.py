@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from func_ising import simulation, conf_rnd, oneSweep2D
+from utils.fising2D import simulation, conf_rnd, oneSweep2D
 from numba import jit
 
 

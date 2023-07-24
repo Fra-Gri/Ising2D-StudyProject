@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from func_ising import conf_rnd, simulation, oneSweep2D
+from utils.fising2D import conf_rnd, simulation, oneSweep2D
 import statsmodels.tsa.stattools as sm
 from numba import jit
 from scipy.optimize import curve_fit
