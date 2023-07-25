@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from utils.fising2D import conf_rnd, wolff, energy
+from fising2D import conf_rnd, wolff, energy
 from numba import jit
 
 

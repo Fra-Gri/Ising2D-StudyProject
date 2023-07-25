@@ -1,10 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from utils.fising2D import conf_rnd, wolff, simulation
+from fising2D import conf_rnd, wolff, simulation
 from numba import jit
 
 Tinitial=3.5 
 Tfinal=1.0
+T=Tinitial
 Tc=2/np.log(1+np.sqrt(2))
 
 t_eq=int(1e5) # Numero di MCS necessari affinchè la CDM campioni la distribuzione canonica
@@ -22,13 +23,13 @@ c_list=[]
 conf=conf_rnd(N)
 
 # simulazione
-while(Tinitial>Tfinal):
-    E_mean,M_mean,susceptibility,specific_heat=simulation(Tinitial,conf,t_eq,t_mis,wolff)
-    m_list.append([np.abs(M_mean)/(N**2),Tinitial])
-    e_list.append([E_mean/(N**2),Tinitial])
-    susc_list.append([susceptibility,Tinitial])
-    c_list.append([specific_heat,Tinitial])
-    Tinitial-=0.1
+while(T>Tfinal):
+    E_mean,M_mean,susceptibility,specific_heat=simulation(conf, T, t_eq, t_mis, wolff)
+    m_list.append([np.abs(M_mean)/(N**2),T])
+    e_list.append([E_mean/(N**2),T])
+    susc_list.append([susceptibility,T])
+    c_list.append([specific_heat,T])
+    T-=0.1
 
 m=np.array(m_list)
 e=np.array(e_list)

@@ -217,8 +217,8 @@ def Binder(m2, m4):
     '''
     return 0.5*(3-m4/(m2)**2)
 
-def simulation(conf:np.ndarray, T:float, t_eq:int, t_mis:int, fstep:function):
-    '''Simulate the system using the Metropolis algorithm and compute the following
+def simulation(conf:np.ndarray, T:float, t_eq:int, t_mis:int, fstep):
+    '''Simulate the system using the selected algorithm and compute the following
     quantities: energy per spin, magnetization per spin, susceptibility, specific heat. 
     During the first for the system thermalize, and during the second we made the 
     measurements.
