@@ -2,8 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from fising2D import wolff
 from numba import jit
-import os
-my_path = os.path.dirname(__file__)
+
 
 N=100
 
@@ -44,5 +43,4 @@ plt.xscale("log")
 plt.xlabel("time")
 plt.ylabel("m")
 plt.legend(loc='upper right')
-plt.savefig(os.path.join(my_path,"Immagini/termalization_wolff.png"))
 plt.show()
