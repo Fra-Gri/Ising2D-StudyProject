@@ -47,28 +47,7 @@ def energy(conf:np.ndarray):
             E=E-heff*conf[i,j]/2
     return E
 
-def neighbours(i: int, j:int, N:int):
-    '''Compute the coordinates of the nearest neighbours for a square lattice in
-    periodic boundaries.
 
-    Parameters
-    ----------
-    i : int
-        first coordinate of the spin
-    j : int
-        second coordinate of the spin
-    N : int
-        size of the system
-    
-    Returns
-    -------
-    nn : list_like
-        list of nearest neighbours of the spin
-    '''
-    nn=np.array([[(i-1)%N,j],[(i+1)%N,j],[i,(j+1)%N],[i,(j-1)%N]])
-    return nn
-
-@jit
 def wolff(conf:np.ndarray, T:float):
     '''Implementation of one step the Wolff algorithm:
             1 - select the seed
@@ -99,7 +78,7 @@ def wolff(conf:np.ndarray, T:float):
         new_spin = []
 
         for i,j in old_spin:
-            nn = neighbours(i,j,N)
+            nn = [[(i-1)%N,j],[(i+1)%N,j],[i,(j+1)%N],[i,(j-1)%N]]
             for state in nn:
                 if conf[state[0],state[1]] == spin_seed and state not in cluster:
                     if np.random.rand() < p_add:

@@ -24,7 +24,7 @@ tau2=[]
 
 for i in range (0,len(N)):
     conf=conf_rnd(N[i])
-    M=simulation(Tc,conf,t_eq,t_mis,oneSweep2D)
+    M=simulation(conf,Tc,t_eq,t_mis,oneSweep2D)
     M_autocorr=sm.acf(M,True,nlags=t_max,fft=True)
     xdata=np.linspace(0,t_max,t_max+1)
     popt, pcov = curve_fit(func,xdata,  M_autocorr)

@@ -20,7 +20,7 @@ for N in n:
     B_list=[]
     T=Tinitial
     while(T>Tfinal):
-        m2,m4=simulation_binder(T,conf,t_term,t_step,N)
+        m2,m4=simulation_binder(conf,T,t_term,t_step,N)
         B_list.append([Binder(m2,m4),T])
         T-=0.01
     B_all.append(B_list)

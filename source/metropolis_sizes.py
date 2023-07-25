@@ -32,7 +32,7 @@ for N in L:
     conf=conf_rnd(N)
 
     while(T>Tfinal):
-        E_mean,M_mean,susceptibility,specific_heat=simulation(T,conf,t_term,t_step,oneSweep2D)
+        E_mean,M_mean,susceptibility,specific_heat=simulation(conf,T,t_term,t_step,oneSweep2D)
         m_list.append([np.abs(M_mean),T])
         e_list.append([E_mean,T])
         susc_list.append([susceptibility,T])
